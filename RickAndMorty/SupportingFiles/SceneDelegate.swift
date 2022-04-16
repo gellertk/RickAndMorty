@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = UINavigationController(rootViewController: ViewController()) 
+        self.window?.rootViewController = UINavigationController(rootViewController: HeroesViewController()) 
         self.window?.makeKeyAndVisible()
     }
 

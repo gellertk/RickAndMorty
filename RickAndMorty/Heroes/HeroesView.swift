@@ -7,7 +7,21 @@
 
 import UIKit
 
-class HerosView: UIView {
+protocol HeroesViewDelegate: AnyObject {
+    
+}
+
+class HeroesView: UIView {
+    
+    weak var delegate: HeroesViewDelegate?
+    
+    let heroesTableView: UITableView = {
+       let tableView = UITableView()
+        tableView.register(HeroesTableViewCell.self,
+                           forCellReuseIdentifier: HeroesTableViewCell.reuseId)
+        
+        return tableView
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,15 +34,20 @@ class HerosView: UIView {
     
 }
 
-private extension HerosView {
+private extension HeroesView {
     
     func setupView() {
-        backgroundColor = .yellow
+        addSubviews([heroesTableView])
         setupConstraints()
     }
     
     func setupConstraints() {
-        
+        NSLayoutConstraint.activate([
+            heroesTableView.topAnchor.constraint(equalTo: topAnchor),
+            heroesTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            heroesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            heroesTableView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
     }
     
 }

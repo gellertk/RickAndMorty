@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		CBFB11F4280AAB5E00574C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB11F3280AAB5E00574C92 /* AppDelegate.swift */; };
 		CBFB11F6280AAB5E00574C92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB11F5280AAB5E00574C92 /* SceneDelegate.swift */; };
-		CBFB11F8280AAB5E00574C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB11F7280AAB5E00574C92 /* ViewController.swift */; };
-		CBFB11FB280AAB5E00574C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFB11F9280AAB5E00574C92 /* Main.storyboard */; };
+		CBFB11F8280AAB5E00574C92 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB11F7280AAB5E00574C92 /* HeroesViewController.swift */; };
 		CBFB11FD280AAB6000574C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFB11FC280AAB6000574C92 /* Assets.xcassets */; };
 		CBFB1200280AAB6000574C92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFB11FE280AAB6000574C92 /* LaunchScreen.storyboard */; };
+		CBFB1209280AAED800574C92 /* HeroesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1208280AAED800574C92 /* HeroesView.swift */; };
+		CBFB120C280AAEF000574C92 /* HeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB120B280AAEF000574C92 /* HeroesTableViewCell.swift */; };
+		CBFB120F280AAF1600574C92 /* HeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB120E280AAF1600574C92 /* HeroViewController.swift */; };
+		CBFB1211280AAF3700574C92 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1210280AAF3700574C92 /* HeroView.swift */; };
+		CBFB1214280AB1FA00574C92 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1213280AB1FA00574C92 /* UIView + Extension.swift */; };
+		CBFB1218280AB2E100574C92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1217280AB2E100574C92 /* NetworkManager.swift */; };
+		CBFB121A280AB57000574C92 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1219280AB57000574C92 /* Hero.swift */; };
+		CBFB121E280AE34900574C92 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB121D280AE34900574C92 /* UIStackView + Extension.swift */; };
+		CBFB1220280B030500574C92 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB121F280B030500574C92 /* UIImageView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CBFB11F0280AAB5E00574C92 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFB11F3280AAB5E00574C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFB11F5280AAB5E00574C92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CBFB11F7280AAB5E00574C92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CBFB11FA280AAB5E00574C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CBFB11F7280AAB5E00574C92 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		CBFB11FC280AAB6000574C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBFB11FF280AAB6000574C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBFB1201280AAB6000574C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBFB1208280AAED800574C92 /* HeroesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesView.swift; sourceTree = "<group>"; };
+		CBFB120B280AAEF000574C92 /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewCell.swift; sourceTree = "<group>"; };
+		CBFB120E280AAF1600574C92 /* HeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewController.swift; sourceTree = "<group>"; };
+		CBFB1210280AAF3700574C92 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		CBFB1213280AB1FA00574C92 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		CBFB1217280AB2E100574C92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CBFB1219280AB57000574C92 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		CBFB121D280AE34900574C92 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		CBFB121F280B030500574C92 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,63 @@
 		CBFB11F2280AAB5E00574C92 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				CBFB11F3280AAB5E00574C92 /* AppDelegate.swift */,
-				CBFB11F5280AAB5E00574C92 /* SceneDelegate.swift */,
-				CBFB11F7280AAB5E00574C92 /* ViewController.swift */,
-				CBFB11F9280AAB5E00574C92 /* Main.storyboard */,
+				CBFB1216280AB2CE00574C92 /* Network */,
+				CBFB120D280AAEF400574C92 /* Heroes */,
+				CBFB1212280AAF5B00574C92 /* Hero */,
+				CBFB1215280AB1FF00574C92 /* Extension */,
+				CBFB1207280AAE6F00574C92 /* SupportingFiles */,
 				CBFB11FC280AAB6000574C92 /* Assets.xcassets */,
 				CBFB11FE280AAB6000574C92 /* LaunchScreen.storyboard */,
 				CBFB1201280AAB6000574C92 /* Info.plist */,
 			);
 			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		CBFB1207280AAE6F00574C92 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB11F3280AAB5E00574C92 /* AppDelegate.swift */,
+				CBFB11F5280AAB5E00574C92 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CBFB120D280AAEF400574C92 /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB11F7280AAB5E00574C92 /* HeroesViewController.swift */,
+				CBFB1208280AAED800574C92 /* HeroesView.swift */,
+				CBFB120B280AAEF000574C92 /* HeroesTableViewCell.swift */,
+			);
+			path = Heroes;
+			sourceTree = "<group>";
+		};
+		CBFB1212280AAF5B00574C92 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB120E280AAF1600574C92 /* HeroViewController.swift */,
+				CBFB1210280AAF3700574C92 /* HeroView.swift */,
+			);
+			path = Hero;
+			sourceTree = "<group>";
+		};
+		CBFB1215280AB1FF00574C92 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB1213280AB1FA00574C92 /* UIView + Extension.swift */,
+				CBFB121F280B030500574C92 /* UIImageView + Extension.swift */,
+				CBFB121D280AE34900574C92 /* UIStackView + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CBFB1216280AB2CE00574C92 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB1217280AB2E100574C92 /* NetworkManager.swift */,
+				CBFB1219280AB57000574C92 /* Hero.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +191,6 @@
 			files = (
 				CBFB1200280AAB6000574C92 /* LaunchScreen.storyboard in Resources */,
 				CBFB11FD280AAB6000574C92 /* Assets.xcassets in Resources */,
-				CBFB11FB280AAB5E00574C92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +201,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBFB11F8280AAB5E00574C92 /* ViewController.swift in Sources */,
+				CBFB120F280AAF1600574C92 /* HeroViewController.swift in Sources */,
+				CBFB11F8280AAB5E00574C92 /* HeroesViewController.swift in Sources */,
+				CBFB121E280AE34900574C92 /* UIStackView + Extension.swift in Sources */,
 				CBFB11F4280AAB5E00574C92 /* AppDelegate.swift in Sources */,
+				CBFB1209280AAED800574C92 /* HeroesView.swift in Sources */,
+				CBFB1214280AB1FA00574C92 /* UIView + Extension.swift in Sources */,
+				CBFB120C280AAEF000574C92 /* HeroesTableViewCell.swift in Sources */,
+				CBFB1220280B030500574C92 /* UIImageView + Extension.swift in Sources */,
+				CBFB1218280AB2E100574C92 /* NetworkManager.swift in Sources */,
+				CBFB121A280AB57000574C92 /* Hero.swift in Sources */,
 				CBFB11F6280AAB5E00574C92 /* SceneDelegate.swift in Sources */,
+				CBFB1211280AAF3700574C92 /* HeroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CBFB11F9280AAB5E00574C92 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBFB11FA280AAB5E00574C92 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CBFB11FE280AAB6000574C92 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +358,6 @@
 				INFOPLIST_FILE = RickAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +385,6 @@
 				INFOPLIST_FILE = RickAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

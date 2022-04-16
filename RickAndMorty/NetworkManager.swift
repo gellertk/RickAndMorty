@@ -7,17 +7,13 @@
 
 import Foundation
 
-protocol HeroManagerDelegate: AnyObject {
-    func didUpdateHeroes(heroes: [Hero])
-}
-
 struct NetworkManager {
     
-    weak var delegate: HeroManagerDelegate?
+    static let shared = NetworkManager()
     
     let api = "https://rickandmortyapi.com/api/character"
     
-    func getHeroData(page: Int, completion: @escaping (Result<HeroData, Error>) -> Void) {
+    func getHeroData(with page: Int, completion: @escaping (Result<PagedHero, Error>) -> ()) {
         
         guard let url = URL(string: api + "/?page=\(page))") else {
             return
@@ -27,12 +23,12 @@ struct NetworkManager {
             if let error = error {
                 completion(.failure(error))
             }
-            guard let data = data, error == nil else {
+            guard let data = data else {
                 return
             }
             do {
-                let characters = try JSONDecoder().decode(HeroData.self, from: data)
-                completion(.success(characters))
+                let heroes = try JSONDecoder().decode(PagedHero.self, from: data)
+                completion(.success(heroes))
             }
             catch {
                 completion(.failure(error))
@@ -41,43 +37,45 @@ struct NetworkManager {
         task.resume()
     }
     
-    func getHeroImage(hero: Hero, completion: @escaping (Result<Data, Error>) -> Void) {
+    func getImage(_ hero: Hero, completion: @escaping (Result<Data, Error>) -> ()) {
         
-        guard let url = URL(string: hero.imageURL) else {
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) {data, _ , error in
-            guard let data = data, error == nil else {
+        if let imgURL = hero.image {
+            guard let url = URL(string: imgURL) else {
                 return
             }
             
-            completion(.success(data))
+            let task = URLSession.shared.dataTask(with: url) { data, _, error in
+                guard let data = data, error == nil else {
+                    return
+                }
+                
+                completion(.success(data))
+            }
+            
+            task.resume()
         }
-        
-        task.resume()
     }
     
-    private func parseJSON(data: Data) -> [Hero] {
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode(HeroData.self, from: data)
-            
-            return decodedData.results.map {
-                Hero(id: $0.id,
-                     name: $0.name,
-                     species: $0.species,
-                     status: $0.status,
-                     gender: $0.gender,
-                     episodeCount: $0.episode.count,
-                     location: $0.location.name,
-                     imageURL: $0.image)
-            }
-        } catch {
-            print(error.localizedDescription)
-            
-            return [Hero]()
-        }
-    }
+//    private func parseJSON(data: Data) -> [Hero] {
+//        let decoder = JSONDecoder()
+//        do {
+//            let decodedData = try decoder.decode(HeroData.self, from: data)
+//            
+//            return decodedData.results.map {
+//                Hero(id: $0.id,
+//                     name: $0.name,
+//                     species: $0.species,
+//                     status: $0.status,
+//                     gender: $0.gender,
+//                     episodeCount: $0.episode.count,
+//                     location: $0.location.name,
+//                     image: $0.image)
+//            }
+//        } catch {
+//            print(error.localizedDescription)
+//            
+//            return [Hero]()
+//        }
+//    }
     
 }
