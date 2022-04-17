@@ -9,15 +9,33 @@ import UIKit
 
 class HeroesTableViewCell: UITableViewCell {
     
-    static let reuseId = "heroesTableViewCellId"
+    static let reuseId = "HeroesTableViewCell"
     
-    private let nameLabel = UILabel()
-    private let speciesLabel = UILabel()
-    private let genderLabel = UILabel()
+    var heroId = 0
+    
+    private let nameLabel: UILabel = {
+        let label = UILabel()
+        label.adjustsFontSizeToFitWidth = true
+        
+        return label
+    }()
+    
+    private let speciesLabel: UILabel = {
+        let label = UILabel()
+        label.adjustsFontSizeToFitWidth = true
+        
+        return label
+    }()
+    
+    private let genderLabel: UILabel = {
+        let label = UILabel()
+        label.adjustsFontSizeToFitWidth = true
+        
+        return label
+    }()
     
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person.2")
         imageView.contentMode = .scaleAspectFit
         
         return imageView
@@ -41,6 +59,9 @@ class HeroesTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        nameLabel.text = ""
+        speciesLabel.text = ""
+        genderLabel.text = ""
         avatarImageView.image = nil
     }
     
@@ -48,10 +69,11 @@ class HeroesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupContent(hero: Hero) {
+    func setupContent(with hero: Hero) {
         nameLabel.text = hero.name
         speciesLabel.text = hero.species
         genderLabel.text = hero.gender
+        heroId = hero.id
         avatarImageView.image = UIImage(data: hero.imageData ?? Data())
     }
     
@@ -71,9 +93,11 @@ private extension HeroesTableViewCell {
             labelsStackView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                      constant: 10),
             labelsStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            labelsStackView.trailingAnchor.constraint(equalTo: avatarImageView.leadingAnchor,
+                                                      constant: -10),
             
             avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                      constant: -10),
+                                                      constant: -40),
             avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             avatarImageView.heightAnchor.constraint(equalToConstant: 80),
             avatarImageView.widthAnchor.constraint(equalToConstant: 80)

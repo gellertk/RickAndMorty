@@ -11,11 +11,10 @@ struct NetworkManager {
     
     static let shared = NetworkManager()
     
-    let api = "https://rickandmortyapi.com/api/character"
-    
-    func getHeroData(with page: Int, completion: @escaping (Result<PagedHero, Error>) -> ()) {
-        
-        guard let url = URL(string: api + "/?page=\(page))") else {
+    let api = "https://rickandmortyapi.com/api/character/"
+
+    func getHeroesData(for page: Int, completion: @escaping (Result<PagedHero, Error>) -> ()) {
+        guard let url = URL(string: api + "?page=\(page)") else {
             return
         }
         
@@ -29,8 +28,29 @@ struct NetworkManager {
             do {
                 let heroes = try JSONDecoder().decode(PagedHero.self, from: data)
                 completion(.success(heroes))
+            } catch {
+                completion(.failure(error))
             }
-            catch {
+        }
+        task.resume()
+    }
+    
+    func getHeroData(for id: Int, completion: @escaping (Result<Hero, Error>) -> ()) {
+        guard let url = URL(string: api + "\(id)") else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            guard let data = data else {
+                return
+            }
+            do {
+                let hero = try JSONDecoder().decode(Hero.self, from: data)
+                completion(.success(hero))
+            } catch {
                 completion(.failure(error))
             }
         }
@@ -45,37 +65,17 @@ struct NetworkManager {
             }
             
             let task = URLSession.shared.dataTask(with: url) { data, _, error in
-                guard let data = data, error == nil else {
+                if let error = error {
+                    completion(.failure(error))
+                }
+                guard let data = data else {
                     return
                 }
                 
                 completion(.success(data))
             }
-            
             task.resume()
         }
     }
-    
-//    private func parseJSON(data: Data) -> [Hero] {
-//        let decoder = JSONDecoder()
-//        do {
-//            let decodedData = try decoder.decode(HeroData.self, from: data)
-//            
-//            return decodedData.results.map {
-//                Hero(id: $0.id,
-//                     name: $0.name,
-//                     species: $0.species,
-//                     status: $0.status,
-//                     gender: $0.gender,
-//                     episodeCount: $0.episode.count,
-//                     location: $0.location.name,
-//                     image: $0.image)
-//            }
-//        } catch {
-//            print(error.localizedDescription)
-//            
-//            return [Hero]()
-//        }
-//    }
     
 }

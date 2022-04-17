@@ -2,32 +2,35 @@
 //  UIImageView + Extension.swift
 //  RickAndMorty
 //
-//  Created by Кирилл  Геллерт on 16.04.2022.
+//  Created by Кирилл  Геллерт on 17.04.2022.
 //
 
 import UIKit
 
-var imageCache = NSCache<NSString, UIImage>()
+var imageCache = NSCache<NSString,UIImage>()
 
 extension UIImageView {
+    
+    func loadImage(urlString: String) {
         
-    func load(url: URL) {
-        
-        if let image = imageCache.object(forKey: url.absoluteString as NSString) {
+        if let image = imageCache.object(forKey: urlString as NSString) {
             self.image = image
             return
         }
         
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                        self?.image = image
-                    }
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    imageCache.setObject(image, forKey: url.absoluteString as NSString)
+                    self.image = image
                 }
             }
         }
+        
     }
     
 }

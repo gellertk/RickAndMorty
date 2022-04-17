@@ -10,15 +10,14 @@ import UIKit
 class HeroView: UIView {
     
     private let nameLabel = UILabel()
-    private let species = UILabel()
-    private let gender = UILabel()
-    private let status = UILabel()
-    private let location = UILabel()
-    private let episodeCount = UILabel()
+    private let speciesLabel = UILabel()
+    private let genderLabel = UILabel()
+    private let statusLabel = UILabel()
+    private let locationLabel = UILabel()
+    private let episodeCountLabel = UILabel()
     
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.init(systemName: "person.2")
         imageView.contentMode = .scaleAspectFit
         
         return imageView
@@ -26,11 +25,11 @@ class HeroView: UIView {
     
     private lazy var heroStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel,
-                                                       species,
-                                                       gender,
-                                                       status,
-                                                       location,
-                                                       episodeCount],
+                                                       speciesLabel,
+                                                       genderLabel,
+                                                       statusLabel,
+                                                       locationLabel,
+                                                       episodeCountLabel],
                                     axis: .vertical,
                                     spacing: 10,
                                     distribution: .fillEqually)
@@ -47,6 +46,16 @@ class HeroView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupContent(hero: Hero) {
+        nameLabel.text = hero.name
+        speciesLabel.text = hero.species
+        genderLabel.text = hero.gender
+        statusLabel.text = hero.status
+        locationLabel.text = hero.location.name
+        episodeCountLabel.text = "episode count: \(hero.episode.count)"
+        avatarImageView.loadImage(urlString: hero.image ?? "")
+    }
+    
 }
 
 private extension HeroView {
@@ -61,13 +70,14 @@ private extension HeroView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             avatarImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            avatarImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
+                                                 constant: 20),
             avatarImageView.heightAnchor.constraint(equalToConstant: 160),
             avatarImageView.widthAnchor.constraint(equalToConstant: 160),
             
-            heroStackView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
-            heroStackView.heightAnchor.constraint(equalToConstant: 100),
-            heroStackView.widthAnchor.constraint(equalToConstant: 100)
+            heroStackView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor,
+                                              constant: 20),
+            heroStackView.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     

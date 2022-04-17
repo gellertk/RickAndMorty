@@ -20,7 +20,7 @@
 		CBFB1218280AB2E100574C92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1217280AB2E100574C92 /* NetworkManager.swift */; };
 		CBFB121A280AB57000574C92 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1219280AB57000574C92 /* Hero.swift */; };
 		CBFB121E280AE34900574C92 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB121D280AE34900574C92 /* UIStackView + Extension.swift */; };
-		CBFB1220280B030500574C92 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB121F280B030500574C92 /* UIImageView + Extension.swift */; };
+		CBFB1224280C268100574C92 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB1223280C268100574C92 /* UIImageView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		CBFB1217280AB2E100574C92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CBFB1219280AB57000574C92 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		CBFB121D280AE34900574C92 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
-		CBFB121F280B030500574C92 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		CBFB1223280C268100574C92 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				CBFB1213280AB1FA00574C92 /* UIView + Extension.swift */,
-				CBFB121F280B030500574C92 /* UIImageView + Extension.swift */,
+				CBFB1223280C268100574C92 /* UIImageView + Extension.swift */,
 				CBFB121D280AE34900574C92 /* UIStackView + Extension.swift */,
 			);
 			path = Extension;
@@ -201,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFB1224280C268100574C92 /* UIImageView + Extension.swift in Sources */,
 				CBFB120F280AAF1600574C92 /* HeroViewController.swift in Sources */,
 				CBFB11F8280AAB5E00574C92 /* HeroesViewController.swift in Sources */,
 				CBFB121E280AE34900574C92 /* UIStackView + Extension.swift in Sources */,
@@ -208,7 +209,6 @@
 				CBFB1209280AAED800574C92 /* HeroesView.swift in Sources */,
 				CBFB1214280AB1FA00574C92 /* UIView + Extension.swift in Sources */,
 				CBFB120C280AAEF000574C92 /* HeroesTableViewCell.swift in Sources */,
-				CBFB1220280B030500574C92 /* UIImageView + Extension.swift in Sources */,
 				CBFB1218280AB2E100574C92 /* NetworkManager.swift in Sources */,
 				CBFB121A280AB57000574C92 /* Hero.swift in Sources */,
 				CBFB11F6280AAB5E00574C92 /* SceneDelegate.swift in Sources */,
